@@ -25,7 +25,7 @@ checkpoint genome_faidx:
         "logs/genome-faidx.log",
     cache: True
     wrapper:
-        ""v5.5.0/bio/samtools/faidx"
+        "v5.5.0/bio/samtools/faidx"
 
 
 rule genome_dict:
@@ -57,7 +57,7 @@ rule get_known_variation:
         type="all",
     cache: True
     wrapper:
-        ""v5.5.0/bio/reference/ensembl-variation"
+        "v5.5.0/bio/reference/ensembl-variation"
 
 
 rule remove_iupac_codes:
@@ -85,7 +85,7 @@ rule tabix_known_variants:
         "-p vcf",
     cache: True
     wrapper:
-        ""v5.5.0/bio/tabix"
+        "v5.5.0/bio/tabix"
 
 
 rule bwa_index:
@@ -99,7 +99,7 @@ rule bwa_index:
         mem_mb=369000,
     cache: True
     wrapper:
-        ""v5.5.0/bio/bwa/index"
+        "v5.5.0/bio/bwa/index"
 
 
 rule get_vep_cache:
@@ -112,7 +112,7 @@ rule get_vep_cache:
     log:
         "logs/vep/cache.log",
     wrapper:
-        ""v5.5.0/bio/vep/cache"
+        "v5.5.0/bio/vep/cache"
 
 
 rule get_vep_plugins:
@@ -123,4 +123,4 @@ rule get_vep_plugins:
     params:
         release=config["ref"]["release"],
     wrapper:
-        ""v5.5.0/bio/vep/plugins"
+        "v5.5.0/bio/vep/plugins"
