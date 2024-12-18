@@ -8,6 +8,7 @@ rule get_genome:
         datatype="dna",
         build=config["ref"]["build"],
         release=config["ref"]["release"],
+        url="ftp://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/"
     cache: True
     wrapper:
         "0.74.0/bio/reference/ensembl-sequence"
